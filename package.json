@@ -1,0 +1,15 @@
+{
+  "name": "davissummerschool",
+  "version": "1.0.0",
+  "description": "Cypress project TDL",
+  "main": "comments.js",
+  "scripts": {
+    "format": "npx prettier . --write"
+  },
+  "author": "Davis Laksbergs",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.13.1",
+    "prettier": "^3.3.3"
+  }
+}
