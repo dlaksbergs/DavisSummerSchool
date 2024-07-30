@@ -3,6 +3,7 @@ class Global {
     menuButton: () => cy.getByTestId("nav-menu-button"),
     menuButtonLinks: (pageName) =>
       cy.getByTestId("nav-menu-popup").contains("a", pageName),
+    logoutButton: () => cy.getByTestId("logout-button"),
   };
   navigateMenuButton = {
     openPage: (pageName) => {

@@ -30,10 +30,12 @@ Cypress.Commands.add("getByTestId", (id) => {
 });
 
 Cypress.Commands.add("login", (email, password) => {
-  cy.visit("/");
-  cy.contains("h1", "Welcome back");
-  Login.fillEmail(email);
-  Login.fillPassword(password);
-  Login.elements.signInButton().click();
-  Home.elements.Heading().should("have.text", "Store of Excellence");
+  cy.session("loginSession", () => {
+    cy.visit("/");
+    cy.contains("h1", "Welcome back");
+    Login.fillEmail(email);
+    Login.fillPassword(password);
+    Login.elements.signInButton().click();
+    Home.elements.Heading().should("have.text", "Store of Excellence");
+  });
 });
