@@ -1,6 +1,6 @@
 class ProductListingPage {
   elements = {
-    Shirt: () => cy.getByTestId("product-wrapper").first(),
+    shirt: () => cy.getByTestId("product-wrapper").first(),
   };
 }
 

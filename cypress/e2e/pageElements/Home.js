@@ -1,6 +1,6 @@
 class Home {
   elements = {
-    Heading: () => cy.getByTestId("nav-store-link"),
+    heading: () => cy.getByTestId("nav-store-link"),
   };
 }
 
