@@ -1,4 +1,3 @@
-import Login from "../pageElements/Login";
 import Global from "../pageElements/Global";
 import Home from "../pageElements/Home";
 import ProductListingPage from "../pageElements/ProductListingPage";
@@ -6,9 +5,11 @@ import ProductDescriptionPage from "../pageElements/ProductDescriptionPage";
 import Checkout from "/Users/tdlschool18/DavisSummerSchool/cypress/e2e/pageElements/Checkout"
 import Cart from "../pageElements/Cart";
 import Overview from "../pageElements/Overview";
+
 describe("login functionality", () => {
   const USERNAME = Cypress.env("username");
   const PASSWORD = Cypress.env("password");
+
   beforeEach(() => {
     cy.login(USERNAME, PASSWORD);
   });
@@ -17,11 +18,11 @@ describe("login functionality", () => {
     cy.visit("/");
 
     // Step 3
-    Home.elements.Heading().should("have.text", "Store of Excellence");
+    Home.elements.heading().should("have.text", "Store of Excellence");
 
     // Step 4
-    ProductListingPage.elements.Shirt().click();
-    ProductDescriptionPage.elements.Title().contains("Medusa T-Shirt");
+    ProductListingPage.elements.shirt().click();
+    ProductDescriptionPage.elements.title().contains("Medusa T-Shirt");
   });
 
   it("Step 2: Select product options and add to cart", () => {
@@ -45,7 +46,7 @@ describe("login functionality", () => {
     cy.visit("/cart");
     // Step 8
     ProductDescriptionPage.elements.cartButton().click();
-    ProductDescriptionPage.elements.Title().contains("Medusa T-Shirt");
+    ProductDescriptionPage.elements.title().contains("Medusa T-Shirt");
 
     // Step 9
     Cart.elements.checkoutButton().click();

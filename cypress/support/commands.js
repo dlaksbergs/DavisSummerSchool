@@ -36,6 +36,6 @@ Cypress.Commands.add("login", (email, password) => {
     Login.fillEmail(email);
     Login.fillPassword(password);
     Login.elements.signInButton().click();
-    Home.elements.Heading().should("have.text", "Store of Excellence");
+    Home.elements.heading().should("have.text", "Store of Excellence");
   });
 });
