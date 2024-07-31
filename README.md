@@ -1,16 +1,60 @@
 # DavisSummerSchool 2024
 
-TDL Summer School project
+Welcome to the TDL Summer School project for 2024. This project involves end-to-end testing for an online webstore using Cypress.
 
-## File formating
+## Project Overview
 
-This project uses [Prettier](https://www.npmjs.com/package/prettier) package to format the code
+This project includes end-to-end tests for basic functionalities of the online webstore, such as login, add to cart, checkout, and logout.
 
-To format all files open the terminal and run the command `npm run format`
+## Test Scenarios
+- ### Full flow
+    -  **Login Functionality:** Verify that users can successfully log in with valid credentials.
+    - **Add to Cart:** Ensure products can be added to the cart from the product detail page and verify cart contents.
+    - **Checkout Process:** Test the checkout flow from cart to payment, including shipping and billing information.
+    - **Logout Functionality:** Verify successful logout and redirection to the login page.
+- ### Additional scenarios
+    - **Switching language to latvian**
+    - **Get redirected to Sign up**
+    - **Sort by functionality**
+    - **Loging out with language set to latvian**
+    - **Different store view functionality**
 
-## Run the test
+## File Formatting
 
-- Open the terminal and run the command `npm run cypress-open`
-- Select E2E Testing
-- Choose a browser and click Start
-- Click on the file e2e.cy.js
+This project uses [Prettier](https://www.npmjs.com/package/prettier) for code formatting.
+
+### Formatting Code
+
+**Format All Files:**
+
+- Open a terminal and navigate to your project directory.
+- Run the following command:
+  ```bash
+  npm run format
+  ```
+
+## Running Tests
+
+### Using Cypress
+
+1. **Open the Project:**
+
+   - Ensure you are in the project directory where Cypress is set up.
+
+2. **Open Cypress Test Runner:**
+
+   - Open a terminal and run the command:
+     ```bash
+     npm run cypress-open
+     ```
+
+3. **Select Testing Type:**
+
+   - In the Cypress Test Runner, select **E2E Testing**.
+
+4. **Choose a Browser:**
+
+   - Pick a browser of your choice (Chrome, Firefox, etc.) and click **Start**.
+
+5. **Run the Test File:**
+   - Click on the file `e2e.cy.js` to start running the end-to-end tests.

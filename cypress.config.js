@@ -6,8 +6,8 @@ module.exports = defineConfig({
     viewportHeight: 1080,
     baseUrl: "https://coe-webstore.tdlbox.com/us/",
     env: {
-      username: "labais@gmail.com",
-      password: "labdien",
+      username: "",
+      password: "",
     },
     setupNodeEvents(on, config) {
       // implement node event listeners here
