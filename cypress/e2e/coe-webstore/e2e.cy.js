@@ -2,10 +2,10 @@ import Global from "../pageElements/Global";
 import Home from "../pageElements/Home";
 import ProductListingPage from "../pageElements/ProductListingPage";
 import ProductDescriptionPage from "../pageElements/ProductDescriptionPage";
-import Checkout from "/Users/tdlschool18/DavisSummerSchool/cypress/e2e/pageElements/Checkout"
+import Checkout from "/Users/tdlschool18/DavisSummerSchool/cypress/e2e/pageElements/Checkout";
 import Cart from "../pageElements/Cart";
 import Overview from "../pageElements/Overview";
-
+//https://tdlschool.atlassian.net/browse/TSS22N-256
 describe("login functionality", () => {
   const USERNAME = Cypress.env("username");
   const PASSWORD = Cypress.env("password");
@@ -28,18 +28,23 @@ describe("login functionality", () => {
   it("Step 2: Select product options and add to cart", () => {
     cy.visit("/products/t-shirt");
     // Step 5
-    ProductDescriptionPage.elements.sizeL().click();
-    ProductDescriptionPage.elements.sizeL()
+    ProductDescriptionPage.elements.sizeXL().click();
+    ProductDescriptionPage.elements
+      .sizeXL()
       .should("have.class", "bg-ui-bg-subtle");
 
     // Step 6
     ProductDescriptionPage.elements.colorBlack().click();
-    ProductDescriptionPage.elements.colorBlack()
+    ProductDescriptionPage.elements
+      .colorBlack()
       .should("have.class", "bg-ui-bg-subtle");
 
     // Step 7
     ProductDescriptionPage.elements.addProductButton().click();
-    ProductDescriptionPage.elements.cartButton().scrollIntoView().should("be.visible");
+    ProductDescriptionPage.elements
+      .cartButton()
+      .scrollIntoView()
+      .should("be.visible");
   });
 
   it("Step 3: View cart and proceed to checkout", () => {
@@ -68,14 +73,18 @@ describe("login functionality", () => {
     cy.visit("/checkout?step=delivery");
     Checkout.elements.deliveryStandart().should("be.visible");
     Checkout.elements.deliveryStandart().click();
-    Checkout.elements.deliveryStandart().should("have.attr", "aria-checked", "true");
+    Checkout.elements
+      .deliveryStandart()
+      .should("have.attr", "aria-checked", "true");
 
     // Step 13
     Checkout.elements.submitDeliveryButton().click();
-    Checkout.elements.paymentMethod().should("have.attr", "aria-checked", "true");
+    Checkout.elements
+      .paymentMethod()
+      .should("have.attr", "aria-checked", "true");
 
     // Step 14
-    
+
     Checkout.elements.submitPaymentButton().click();
     Checkout.elements.submitOrderButton().should("be.visible");
   });
@@ -94,16 +103,4 @@ describe("login functionality", () => {
     Global.elements.logoutButton().click();
     cy.contains("h1", "Welcome back");
   });
-  /* it("Step 7: Change language", () => {
-    cy.visit("/");
-    cy.getByTestId("nav-menu-button").click();
-    cy.getByTestId("home-link").should("be.visible");
-    cy.get('button[role="combobox"]').click();
-    cy.contains("span", "LV").click();
-
-    cy.getByTestId("nav-menu-button").click();
-    cy.get('button[role="combobox"]').should("contain", "LV");
-    cy.getByTestId("logout-button").click();
-    cy.contains("h1", "Laipni lūdzam atpakaļ");
-  }); */
 });
