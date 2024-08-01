@@ -18,7 +18,7 @@ class Store {
     } else if (sortOrder === "highToLow") {
       this.elements.highToLowSort().click();
     }
-    cy.wait(600);
+    cy.wait(1000);
   }
 
   // Method to get all products' prices
