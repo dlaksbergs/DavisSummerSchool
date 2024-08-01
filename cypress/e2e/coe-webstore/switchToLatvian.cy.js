@@ -9,11 +9,10 @@ describe("switch language to latvian", () => {
   });
   it("Change language", () => {
     cy.visit("/");
-    Global.elements.menuButton().click();
-    Global.elements.menuButtonLinks().should("be.visible");
-    Global.elements.languageSelectButton().click();
-    Global.elements.languageLatvian().click();
-
-    Home.elements.heading().should("have.text", "Veikals izcilībai");
+    Global.elements.menuButton().click();//click on the burger menu
+    Global.elements.menuButtonLinks().should("be.visible");//check if the side navigation menu appears
+    Global.elements.languageSelectButton().click();//click on the language select button
+    Global.elements.languageLatvian().click();//select the Latvian language
+    Home.elements.heading().should("have.text", "Veikals izcilībai");//check if the language has changed
   });
 });
