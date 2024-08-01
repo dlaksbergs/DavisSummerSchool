@@ -1,9 +1,9 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  reporter: 'mochawesome',
-  reporterOptions:{
-    overwrite:false,
+  reporter: "mochawesome",
+  reporterOptions: {
+    overwrite: false,
   },
   e2e: {
     viewportWidth: 1920,

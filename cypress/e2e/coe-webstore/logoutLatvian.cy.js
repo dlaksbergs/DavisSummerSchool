@@ -1,5 +1,4 @@
 import Global from "../pageElements/Global";
-import Home from "../pageElements/Home";
 //https://tdlschool.atlassian.net/browse/TSS22N-166
 describe("switch language to latvian", () => {
   const USERNAME = Cypress.env("username");
@@ -9,14 +8,14 @@ describe("switch language to latvian", () => {
   });
   it("Change language to latvian and log out", () => {
     cy.visit("/");
-    Global.elements.menuButton().click();
-    Global.elements.menuButtonLinks().should("be.visible");
-    Global.elements.languageSelectButton().click();
-    Global.elements.languageLatvian().click();
+    Global.elements.menuButton().click();//click on the burger menu
+    Global.elements.menuButtonLinks().should("be.visible");//check if the side navigation menu appears
+    Global.elements.languageSelectButton().click();//click on the language selection button
+    Global.elements.languageLatvian().click();//select Latvian
 
-    Global.elements.menuButton().click();
-    Global.elements.languageSelectButton().should("contain", "LV");
-    Global.elements.logoutButton().click();
-    cy.contains("h1", "Laipni lūdzam atpakaļ");
+    Global.elements.menuButton().click();//click on the burger menu 
+    Global.elements.languageSelectButton().should("contain", "LV");//check if the language is saved
+    Global.elements.logoutButton().click();//click on the logout button
+    cy.contains("h1", "Laipni lūdzam atpakaļ");//check if the sign in page loads with the correct language
   });
 });

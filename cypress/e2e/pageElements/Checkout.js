@@ -12,9 +12,10 @@ class Checkout {
     paymentMethod: () => cy.getByTestId("radio-button"),
     submitPaymentButton: () => cy.getByTestId("submit-payment-button"),
     submitOrderButton: () => cy.getByTestId("submit-order-button"),
+    
   };
 
-  fillShippingInformation() {
+  fillShippingInformation() { // function to fill in the shipping information and check if the values are saved
     this.elements
       .firstNameInput()
       .should("be.visible")

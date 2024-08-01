@@ -16,91 +16,57 @@ describe("login functionality", () => {
 
   it("Step 1: Select product and verify details", () => {
     cy.visit("/");
-
-    // Step 3
-    Home.elements.heading().should("have.text", "Store of Excellence");
-
-    // Step 4
-    ProductListingPage.elements.shirt().click();
-    ProductDescriptionPage.elements.title().contains("Medusa T-Shirt");
+    Home.elements.heading().should("have.text", "Store of Excellence");//check if the page has loaded
+    ProductListingPage.elements.shirt().click();//choose a product
+    ProductDescriptionPage.elements.title().contains("Medusa T-Shirt");//check if the correct product has been chosen
   });
 
   it("Step 2: Select product options and add to cart", () => {
     cy.visit("/products/t-shirt");
-    // Step 5
-    ProductDescriptionPage.elements.sizeXL().click();
+    ProductDescriptionPage.elements.sizeXL().click();// select size
     ProductDescriptionPage.elements
       .sizeXL()
-      .should("have.class", "bg-ui-bg-subtle");
-
-    // Step 6
-    ProductDescriptionPage.elements.colorBlack().click();
+      .should("have.class", "bg-ui-bg-subtle");//check if the correct size is selected
+    ProductDescriptionPage.elements.colorBlack().click();//select color
     ProductDescriptionPage.elements
       .colorBlack()
-      .should("have.class", "bg-ui-bg-subtle");
-
-    // Step 7
-    ProductDescriptionPage.elements.addProductButton().click();
+      .should("have.class", "bg-ui-bg-subtle");//check if the correct color is selected
+    ProductDescriptionPage.elements.addProductButton().click();// add the product to the cart
     ProductDescriptionPage.elements
       .cartButton()
       .scrollIntoView()
-      .should("be.visible");
+      .should("be.visible");//check if the cart icon has appeared
   });
 
-  it("Step 3: View cart and proceed to checkout", () => {
-    cy.visit("/cart");
-    // Step 8
-    ProductDescriptionPage.elements.cartButton().click();
-    ProductDescriptionPage.elements.title().contains("Medusa T-Shirt");
-
-    // Step 9
-    Cart.elements.checkoutButton().click();
-    cy.contains("h2", "Shipping Address");
-  });
-
-  it("Step 4: Fill shipping information", () => {
-    cy.visit("/checkout?step=address");
-    //cy.getByTestId('edit-address-button').click();
-    // Step 10
-    Checkout.fillShippingInformation();
-
-    // Step 11
-    Checkout.elements.submitAddressButton().click();
-  });
-
-  it("Step 5: Select delivery option and proceed to payment", () => {
-    // Step 12
-    cy.visit("/checkout?step=delivery");
-    Checkout.elements.deliveryStandart().should("be.visible");
-    Checkout.elements.deliveryStandart().click();
+  it("Step 3: View cart and checkout", () => {
+    cy.visit("/cart");//visit the cart page
+    ProductDescriptionPage.elements.title().contains("Medusa T-Shirt");//check if the correct product is in the cart
+    Cart.elements.checkoutButton().click();// click on the checkout button
+    cy.contains("h2", "Shipping Address");// check if the correct page is loaded
+    Checkout.fillShippingInformation();// call the function to fill in the shipping information
+    Checkout.elements.submitAddressButton().click();// submit the shipping information
+    Checkout.elements.deliveryStandart().should("be.visible");//check if it loaded correctly
+    Checkout.elements.deliveryStandart().click();//choose the delivery method
     Checkout.elements
       .deliveryStandart()
-      .should("have.attr", "aria-checked", "true");
-
-    // Step 13
-    Checkout.elements.submitDeliveryButton().click();
+      .should("have.attr", "aria-checked", "true");// check if the method is selected
+    Checkout.elements.submitDeliveryButton().click();// submit the delivery method
     Checkout.elements
       .paymentMethod()
-      .should("have.attr", "aria-checked", "true");
-
-    // Step 14
-
-    Checkout.elements.submitPaymentButton().click();
-    Checkout.elements.submitOrderButton().should("be.visible");
+      .should("have.attr", "aria-checked", "true");//check if the payment method is automatically selected
+    Checkout.elements.submitPaymentButton().click();//submit the payment method
+    Checkout.elements.submitOrderButton().should("be.visible");//check if the submit order button is visible
+    Checkout.elements.submitOrderButton().click();//submit all the information
+    Overview.elements.productName().contains("Medusa T-Shirt");//check if the placed order has the correct product
   });
 
-  it("Step 6: Place order and logout", () => {
-    // Step 15
-    cy.visit("/checkout?step=review");
-    Checkout.elements.submitOrderButton().click();
-    Overview.elements.productName().contains("Medusa T-Shirt");
+  it("Step 4: Logout", () => {
+    cy.visit("/");//visit the main paig
+    
+    Global.elements.menuButton().click();//click on the burger menu
+    Global.elements.menuButtonLinks().should("be.visible");//check if the side navigation menu appears
 
-    // Step 16
-    Global.elements.menuButton().click();
-    Global.elements.menuButtonLinks().should("be.visible");
-
-    // Step 17
-    Global.elements.logoutButton().click();
-    cy.contains("h1", "Welcome back");
+    Global.elements.logoutButton().click();//click on the logout button
+    cy.contains("h1", "Welcome back");//check if the sign in page loads
   });
 });
