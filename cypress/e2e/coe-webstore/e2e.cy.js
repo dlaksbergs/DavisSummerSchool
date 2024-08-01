@@ -2,7 +2,7 @@ import Global from "../pageElements/Global";
 import Home from "../pageElements/Home";
 import ProductListingPage from "../pageElements/ProductListingPage";
 import ProductDescriptionPage from "../pageElements/ProductDescriptionPage";
-import Checkout from "/Users/tdlschool18/DavisSummerSchool/cypress/e2e/pageElements/Checkout";
+import Checkout from "../pageElements/Checkout";
 import Cart from "../pageElements/Cart";
 import Overview from "../pageElements/Overview";
 //https://tdlschool.atlassian.net/browse/TSS22N-268
