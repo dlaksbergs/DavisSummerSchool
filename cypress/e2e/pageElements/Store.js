@@ -5,7 +5,7 @@ class Store {
     lowToHighSort: () => cy.contains("span", "Price: Low -> High"),
     productsList: () => cy.getByTestId("products-list"),
     price: () => '[data-testid="price"]',
-    storeViewButton: () => cy.get('a[href="/us/store"] button.transition-fg').contains("Store view"),
+    storeViewButton: () => cy.get('a[href="/us/store"] button.transition-fg').contains("Store view"), // TODO: is 'button.transition-fg' absolutely necessary? can try removing that part
     tableViewButton: () => cy.getByTestId("table-view-btn"),
   };
 
@@ -27,7 +27,7 @@ class Store {
   verifySortingCompleted() {
     this.elements.productsList().should('exist'); // Ensure products list exists
     cy.get('button[role="combobox"]').should('not.have.attr', 'aria-busy'); // Ensure the sort button is not busy
-    cy.wait(1000); // Optional: adjust or remove if sorting indication is not needed
+    cy.wait(1000); // Optional: adjust or remove if sorting indication is not needed       // TODO: try to get rid of wait and replace waiting for some element to be visible or not visible
   }
 
   // Method to get all products' prices
