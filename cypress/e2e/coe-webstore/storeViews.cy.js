@@ -1,5 +1,5 @@
 import Store from "../pageElements/Store";
-//https://tdlschool.atlassian.net/browse/TSS22N-69
+//https://tdlschool.atlassian.net/browse/TSS22N-171
 describe("Check if products are sorted by price", () => {
   const USERNAME = Cypress.env("username");
   const PASSWORD = Cypress.env("password");

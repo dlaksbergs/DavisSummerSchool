@@ -12,13 +12,25 @@ This project includes end-to-end tests for basic functionalities of the online w
     - **Add to Cart:** Ensure products can be added to the cart from the product detail page and verify cart contents.
     - **Checkout Process:** Test the checkout flow from cart to payment, including shipping and billing information.
     - **Logout Functionality:** Verify successful logout and redirection to the login page.
+
 - ### Additional scenarios
-    - **Switching language to latvian**
+    - **Switching language to Latvian**
     - **Get redirected to Sign up**
     - **Sort by functionality**
-    - **Loging out with language set to latvian**
+    - **Logging out with language set to Latvian**
     - **Different store view functionality**
 
+## Installation
+Clone the repository:
+
+```bash
+git clone https://github.com/dlaksbergs/DavisSummerSchool.git
+```
+
+Install dependecies:
+```bash 
+npm install
+```
 ## File Formatting
 
 This project uses [Prettier](https://www.npmjs.com/package/prettier) for code formatting.
@@ -58,3 +70,10 @@ This project uses [Prettier](https://www.npmjs.com/package/prettier) for code fo
 
 5. **Run the Test File:**
    - Click on the file `e2e.cy.js` to start running the end-to-end tests.
+
+### In headless mode
+
+1. Open a terminal and run the command:
+     ```bash
+     npm run cypress-run
+     ```

@@ -5,7 +5,7 @@ import ProductDescriptionPage from "../pageElements/ProductDescriptionPage";
 import Checkout from "/Users/tdlschool18/DavisSummerSchool/cypress/e2e/pageElements/Checkout";
 import Cart from "../pageElements/Cart";
 import Overview from "../pageElements/Overview";
-//https://tdlschool.atlassian.net/browse/TSS22N-256
+//https://tdlschool.atlassian.net/browse/TSS22N-268
 describe("login functionality", () => {
   const USERNAME = Cypress.env("username");
   const PASSWORD = Cypress.env("password");
