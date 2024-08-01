@@ -12,7 +12,7 @@ module.exports = defineConfig({
     baseUrl: "https://coe-webstore.tdlbox.com/us/",
     env: {
       username: "labais@gmail.com",
-      password: "",
+      password: "labdien",
     },
     setupNodeEvents(on, config) {
       // implement node event listeners here

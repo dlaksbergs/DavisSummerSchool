@@ -22,7 +22,11 @@ This project includes end-to-end tests for basic functionalities of the online w
   - **Logging out with language set to Latvian**
   - **Different store view functionality**
   - **Gift card or discount code functionality**
-
+  - **Sign up with empty fields**
+  - **Sign up with empty mandatory fields**
+  - **Sign up with an email that has been used**
+  - **Sign in with incorrect credentials**
+  
 ## Installation
 
 Clone the repository:

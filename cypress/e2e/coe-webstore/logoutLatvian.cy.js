@@ -1,6 +1,6 @@
 import Global from "../pageElements/Global";
 //https://tdlschool.atlassian.net/browse/TSS22N-166
-describe("switch language to latvian", () => {
+describe("switch language to latvian and logout", () => {
   const USERNAME = Cypress.env("username");
   const PASSWORD = Cypress.env("password");
   beforeEach(() => {
