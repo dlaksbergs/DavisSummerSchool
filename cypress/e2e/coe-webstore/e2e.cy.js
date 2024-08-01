@@ -6,7 +6,7 @@ import Checkout from "../pageElements/Checkout";
 import Cart from "../pageElements/Cart";
 import Overview from "../pageElements/Overview";
 //https://tdlschool.atlassian.net/browse/TSS22N-268
-describe("login functionality", () => {
+describe("Full user flow", () => {
   const USERNAME = Cypress.env("username");
   const PASSWORD = Cypress.env("password");
 

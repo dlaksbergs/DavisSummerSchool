@@ -5,6 +5,7 @@ class Login {
     signInButton: () => cy.getByTestId("sign-in-button"),
     fillEmail: (email) => this.emailInput().type(email),
     registerButton: () => cy.getByTestId("register-button"),
+    signInError: () => cy.getByTestId("login-error-message"),
   };
   fillEmail(email) {
     this.elements.emailInput().clear().type(email);

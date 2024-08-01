@@ -1,12 +1,10 @@
-import Global from "../pageElements/Global";
 import ProductDescriptionPage from "../pageElements/ProductDescriptionPage";
 import Home from "../pageElements/Home";
 import ProductListingPage from "../pageElements/ProductListingPage";
 import Cart from "../pageElements/Cart";
-import Checkout from "../pageElements/Checkout";
 
-//https://tdlschool.atlassian.net/browse/TSS22N-166
-describe("switch language to Latvian", () => {
+//https://tdlschool.atlassian.net/browse/TSS22N-219
+describe("check gift card functionality", () => {
   const USERNAME = Cypress.env("username");
   const PASSWORD = Cypress.env("password");
 
